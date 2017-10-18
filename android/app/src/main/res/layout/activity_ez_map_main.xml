@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.jjapp.ezmap.EzMapMainActivity" >
+    com.jjapp.ezmap.EzMapMainActivity
+    <com.easymap.android.maps.v3.MapView
+        android:id="@+id/MapView"
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </com.easymap.android.maps.v3.MapView>
+
+    <TextView
+        android:id="@+id/showtext_jb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="34dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/level"/>
+    <TextView
+        android:id="@+id/showtext_position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@id/showtext_jb"
+        android:text="@string/position"/>
+
+    <Button
+        android:id="@+id/but_sldt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/MapView"
+        android:layout_marginLeft="40dp"
+        android:text="@string/sldt"
+        android:textSize="12sp" />
+    <Button
+        android:id="@+id/but_yxdt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/MapView"
+        android:layout_toRightOf="@id/but_sldt"
+        android:layout_marginLeft="2dp"
+        android:text="@string/yxdt"
+        android:textSize="12sp" />
+    <Button
+        android:id="@+id/but_sldt_online"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/MapView"
+        android:layout_toRightOf="@id/but_yxdt"
+        android:layout_marginLeft="2dp"
+        android:text="@string/sldt_online"
+        android:textSize="12sp" />
+    <Button
+        android:id="@+id/but_yxdt_online"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/MapView"
+        android:layout_toRightOf="@id/but_sldt_online"
+        android:layout_marginLeft="2dp"
+        android:text="@string/yxdt_online"
+        android:textSize="12sp" />
+
+
+</RelativeLayout>
+

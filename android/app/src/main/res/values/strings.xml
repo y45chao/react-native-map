@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">采集</string>
+    <string name="level">提示：请在地图上长按获取位置</string>
+    <string name="position">位置提示</string>
+    <string name="sldt">离线矢量</string>
+    <string name="yxdt">离线影像</string>
+    <string name="sldt_online">在线矢量</string>
+    <string name="yxdt_online">在线影像</string>
+</resources>
