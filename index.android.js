@@ -13,14 +13,13 @@ import {
 } from 'react-native';
 //import App from "./jscode/features/demo/app"
 import Util from './jscode/common/Util';
-import {handleMessage} from './jscode/component/ezMap/RNEzMapModules'
 var RNEzMapView=require("./jscode/component/ezMap/RNEzMapView");
 
 export default class JJApp extends Component {
 
   componentDidMount(){
-    var {NativeModules} =require('react-native') ;
-    NativeModules.RNEzMapInterface.InitMap();
+    //var {NativeModules} =require('react-native') ;
+    //NativeModules.RNEzMapInterface.InitMap();
   }
   render() {
     return (

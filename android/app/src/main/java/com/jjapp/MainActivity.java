@@ -1,6 +1,7 @@
 package com.jjapp;
 
 import com.facebook.react.ReactActivity;
+import com.jjapp.ezmap.RNEzMapEntity;
 
 public class MainActivity extends ReactActivity {
 
@@ -10,6 +11,7 @@ public class MainActivity extends ReactActivity {
      */
     @Override
     protected String getMainComponentName() {
+        RNEzMapEntity.setActivity(this);
         return "JJApp";
     }
 }

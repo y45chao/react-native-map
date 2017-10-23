@@ -1,7 +1,12 @@
 package com.jjapp;
 
+import android.app.Activity;
 import android.app.Application;
 
+import com.easymap.android.maps.v3.MapView;
+import com.easymap.android.maps.v3.layers.GraphicsLayer;
+import com.easymap.android.maps.v3.layers.ezmap.EzMapVMLayer;
+import com.easymap.android.maps.v3.layers.ogc.WMTSLayer;
 import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;

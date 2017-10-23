@@ -37,60 +37,60 @@ public class EzMapMainActivity extends AppCompatActivity implements EzMap.OnStat
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ez_map_main);
-        EzMapLayerManager.initFileDirectory();
-        mapManager = new EzMapLayerManager();
-        mapView = (MapView)findViewById(R.id.MapView);
-        tv_jb = (TextView) findViewById(R.id.showtext_jb);
-        tv_position = (TextView) findViewById(R.id.showtext_position);
-        but_lxsldt = (Button) findViewById(R.id.but_sldt);
-        but_lxyxdt = (Button) findViewById(R.id.but_yxdt);
-        but_zxsldt = (Button) findViewById(R.id.but_sldt_online);
-        but_zxyxdt = (Button) findViewById(R.id.but_yxdt_online);
-
-        but_lxsldt.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0) {
-                MapView mapView = (MapView)findViewById(R.id.MapView);
-                if(mapView!=null){
-                    final EzMap map = mapView.getMap();
-                    if(map!=null) currentMapType = mapManager.chooseToLxSldt(map);
-                }
-            }
-        });
-        but_lxyxdt.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0) {
-                MapView mapView = (MapView)findViewById(R.id.MapView);
-                if(mapView!=null){
-                    final EzMap map = mapView.getMap();
-                    if(map!=null) currentMapType = mapManager.chooseToLxYxdt(map);
-                }
-            }
-        });
-        but_zxsldt.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0) {
-                MapView mapView = (MapView)findViewById(R.id.MapView);
-                if(mapView!=null){
-                    final EzMap map = mapView.getMap();
-                    if(map!=null) currentMapType = mapManager.chooseToZxSldt(map);
-                }
-            }
-        });
-        but_zxyxdt.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0) {
-                MapView mapView = (MapView)findViewById(R.id.MapView);
-                if(mapView!=null){
-                    final EzMap map = mapView.getMap();
-                    if(map!=null) currentMapType = mapManager.chooseToZxYxdt(map);
-                }
-            }
-        });
-        if(mapView!=null){
-            //加载授权文件。注意：所有厂商在调用时要一致用Environment.getExternalStorageDirectory().getPath()+"/EzMap/lic/EzServiceClient4Android.lic"
-            mapView.initLicenseAsDevelopement(Environment.getExternalStorageDirectory().getPath()+"/EzMap/lic/EzServiceClient4Android.lic");
-            // 注册地图准备就绪监听
-            mapView.setOnStatusChangeListener(this);
-            mapView.onCreate(savedInstanceState);
-        }
+//      savedInstanceState  setContentView(R.layout.activity_ez_map_main);
+//        EzMapLayerManager.initFileDirectory();
+//        mapManager = new EzMapLayerManager();
+//        mapView = (MapView)findViewById(R.id.MapView);
+//        tv_jb = (TextView) findViewById(R.id.showtext_jb);
+//        tv_position = (TextView) findViewById(R.id.showtext_position);
+//        but_lxsldt = (Button) findViewById(R.id.but_sldt);
+//        but_lxyxdt = (Button) findViewById(R.id.but_yxdt);
+//        but_zxsldt = (Button) findViewById(R.id.but_sldt_online);
+//        but_zxyxdt = (Button) findViewById(R.id.but_yxdt_online);
+//
+//        but_lxsldt.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View arg0) {
+//                MapView mapView = (MapView)findViewById(R.id.MapView);
+//                if(mapView!=null){
+//                    final EzMap map = mapView.getMap();
+//                    if(map!=null) currentMapType = mapManager.chooseToLxSldt(map);
+//                }
+//            }
+//        });
+//        but_lxyxdt.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View arg0) {
+//                MapView mapView = (MapView)findViewById(R.id.MapView);
+//                if(mapView!=null){
+//                    final EzMap map = mapView.getMap();
+//                    if(map!=null) currentMapType = mapManager.chooseToLxYxdt(map);
+//                }
+//            }
+//        });
+//        but_zxsldt.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View arg0) {
+//                MapView mapView = (MapView)findViewById(R.id.MapView);
+//                if(mapView!=null){
+//                    final EzMap map = mapView.getMap();
+//                    if(map!=null) currentMapType = mapManager.chooseToZxSldt(map);
+//                }
+//            }
+//        });
+//        but_zxyxdt.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View arg0) {
+//                MapView mapView = (MapView)findViewById(R.id.MapView);
+//                if(mapView!=null){
+//                    final EzMap map = mapView.getMap();
+//                    if(map!=null) currentMapType = mapManager.chooseToZxYxdt(map);
+//                }
+//            }
+//        });
+//        if(mapView!=null){
+//            //加载授权文件。注意：所有厂商在调用时要一致用Environment.getExternalStorageDirectory().getPath()+"/EzMap/lic/EzServiceClient4Android.lic"
+//            mapView.initLicenseAsDevelopement(Environment.getExternalStorageDirectory().getPath()+"/EzMap/lic/EzServiceClient4Android.lic");
+//            // 注册地图准备就绪监听
+//            mapView.setOnStatusChangeListener(this);
+//            mapView.onCreate(savedInstanceState,new Bundle());
+//        }
     }
 
     @Override
@@ -185,31 +185,31 @@ public class EzMapMainActivity extends AppCompatActivity implements EzMap.OnStat
         }
     }
 
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if(keyCode == KeyEvent.KEYCODE_BACK){
-            exitDialog();
-        }
-        return false;
-    }
-    private void exitDialog(){
-        AlertDialog.Builder builder = new AlertDialog.Builder(EzMapMainActivity.this);
-        builder.setMessage("确认要退出么？");
-        builder.setTitle("提示");
-        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-                finish();
-                android.os.Process.killProcess(android.os.Process.myPid());
-                System.exit(0);
-            }
-        });
-        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-            }
-        });
-        builder.show();
-    }
+    //     @Override
+    //     public boolean onKeyDown(int keyCode, KeyEvent event) {
+    //         if(keyCode == KeyEvent.KEYCODE_BACK){
+    //
+    //         }
+    //         return false;
+    //     }
+    // private void exitDialog(){
+    //     AlertDialog.Builder builder = new AlertDialog.Builder(EzMapMainActivity.this);
+    //     builder.setMessage("确认要退出么？");
+    //     builder.setTitle("提示");
+    //     builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+    //         public void onClick(DialogInterface dialog, int which) {
+    //             dialog.dismiss();
+    //             finish();
+    //             android.os.Process.killProcess(android.os.Process.myPid());
+    //             System.exit(0);
+    //         }
+    //     });
+    //     builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+    //         public void onClick(DialogInterface dialog, int which) {
+    //             dialog.dismiss();
+    //         }
+    //     });
+    //     builder.show();
+    // }
 
 }

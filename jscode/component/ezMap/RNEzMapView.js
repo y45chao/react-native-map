@@ -1,5 +1,5 @@
 import {PropTypes} from 'react';
-import {requireNativeComponent, NativeModules, View} from 'react-native';
+import {requireNativeComponent, View} from 'react-native';
 var iface={
     name:getName(),
     propTypes:{

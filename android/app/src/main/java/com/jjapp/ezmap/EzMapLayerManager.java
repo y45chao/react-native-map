@@ -49,9 +49,9 @@ public class EzMapLayerManager {
      */
     public void initLoadAllLayer(EzMap map){
         if(lxsl==null) lxsl = addLxWmtsLayer(map,"lxsl",7,19);
-        if(lxyx==null) lxyx = addLxWmtsLayer(map,"lxyx",7,19);
-        if(zxsl==null) zxsl = addZxWmtsLayer(map,"zxsl");
-        if(zxyx==null) zxyx = addZxWmtsLayer(map,"zxyx");
+        //if(lxyx==null) lxyx = addLxWmtsLayer(map,"lxyx",7,19);
+        //if(zxsl==null) zxsl = addZxWmtsLayer(map,"zxsl");
+        //if(zxyx==null) zxyx = addZxWmtsLayer(map,"zxyx");
     }
 
     /**
@@ -113,7 +113,7 @@ public class EzMapLayerManager {
     private WMTSLayer addLxWmtsLayer(EzMap map,String layerType,int minLevel, int maxLevel ){
         if(layerType.equals("lxsl")){
             //注意：离线地图包存放的目录要求所有厂商在调用时要一致用Environment.getExternalStorageDirectory().getPath()+"/EzMap/mapsl"
-            WMTSLayer lyr = createWMTSLayer(map,null,"layer0","lxsl_cache.tmp",Environment.getExternalStorageDirectory().getPath()+"/EzMap/mapsl",minLevel,maxLevel);
+            WMTSLayer lyr = createWMTSLayer(map,null,"layer0","NCSLL11_13_20170426.tmp",Environment.getExternalStorageDirectory().getPath()+"/EzMap/mapsl",minLevel,maxLevel);
             return lyr;
         }else if(layerType.equals("lxyx")){
             //注意：离线地图包存放的目录要求所有厂商在调用时要一致用Environment.getExternalStorageDirectory().getPath()+"/EzMap/mapyx"
